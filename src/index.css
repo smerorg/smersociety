@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Academic Design System for SMER */
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Academic Blue & Professional Grays */
+    --background: 0 0% 100%;
+    --foreground: 217 33% 17%;
+    
+    /* Academic Primary - Deep Navy Blue */
+    --primary: 217 91% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 217 91% 20%;
+    
+    /* Professional Secondary - Warm Academic Gold */
+    --secondary: 45 100% 51%;
+    --secondary-foreground: 217 33% 17%;
+    --secondary-hover: 45 100% 45%;
+    
+    /* Content Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 217 33% 17%;
+    
+    --muted: 217 10% 96%;
+    --muted-foreground: 217 10% 45%;
+    
+    --accent: 217 10% 95%;
+    --accent-foreground: 217 33% 17%;
+    
+    /* Interactive States */
+    --border: 217 20% 88%;
+    --input: 217 20% 88%;
+    --ring: 217 91% 25%;
+    
+    /* Academic Success & Error */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Professional Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 25%), hsl(217 91% 35%));
+    --gradient-accent: linear-gradient(90deg, hsl(45 100% 51%), hsl(45 100% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(217 10% 98%));
+    
+    /* Academic Shadows */
+    --shadow-soft: 0 2px 10px -3px hsl(217 91% 25% / 0.1);
+    --shadow-medium: 0 4px 20px -4px hsl(217 91% 25% / 0.15);
+    --shadow-strong: 0 10px 40px -10px hsl(217 91% 25% / 0.25);
+    
+    /* Professional Typography */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    
+    /* Academic Spacing */
+    --section-padding: 5rem;
+    --container-padding: 2rem;
+    --element-spacing: 1.5rem;
+    
+    /* Professional Transitions */
+    --transition-fast: 0.15s ease-out;
+    --transition-normal: 0.3s ease-out;
+    --transition-slow: 0.5s ease-out;
+    
+    --radius: 0.5rem;
+  }
+}
+
+/* Global text-transform override - must be outside @layer for maximum priority */
+html, html *, body, body * {
+  text-transform: none !important;
+  font-variant: normal !important;
+  font-feature-settings: normal !important;
+  letter-spacing: normal !important;
+}
+
+/* Ensure Cinzel font doesn't force uppercase */
+[style*="font-family: Cinzel"], 
+[style*="font-family: 'Cinzel'"],
+.font-cinzel,
+body {
+  text-transform: none !important;
+  font-variant: normal !important;
+  font-feature-settings: normal !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Cinzel', 'Libre Bodoni', serif;
+    text-transform: none !important;
+    font-variant: normal !important;
+    font-feature-settings: normal !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-foreground;
+    text-transform: none !important;
+    font-variant: normal !important;
+    font-feature-settings: normal !important;
+  }
+
+  strong, b {
+    @apply font-semibold text-slate-900;
+    text-transform: none !important;
+  }
+  
+  p, span, div, a, button, input, textarea, label, select, li, td, th, em, i, u, small, sub, sup {
+    text-transform: none !important;
+  }
+  
+  button, .btn-base, [role="button"] {
+    text-transform: none !important;
+    font-variant: normal !important;
+  }
+  
+  /* Override any Tailwind uppercase utilities */
+  .uppercase, [class*="uppercase"] {
+    text-transform: none !important;
+  }
+  
+  /* Professional Typography Scale */
+  .text-display {
+    @apply text-5xl font-bold tracking-tight;
+  }
+  
+  .text-heading-1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  
+  .text-heading-2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+  
+  .text-heading-3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  
+  .text-body-lg {
+    @apply text-lg leading-relaxed;
+  }
+  
+  .text-body {
+    @apply text-base leading-relaxed;
+  }
+  
+  .text-body-sm {
+    @apply text-sm leading-relaxed;
+  }
+  
+  /* Academic Container Styles */
+  .container-academic {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+  
+  .section-academic {
+    @apply py-20;
+  }
+  
+  /* Professional Interactive Elements */
+  .interactive-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+  
+  /* Academic Card Styles */
+  .card-academic {
+    @apply bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  
+  /* Professional Button Base */
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-all duration-200 interactive-focus disabled:pointer-events-none disabled:opacity-50;
+  }
+}
+
+

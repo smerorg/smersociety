@@ -1,0 +1,13 @@
+<!-- Simple placeholder SMER logo SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="96" viewBox="0 0 256 96" fill="none">
+  <rect width="256" height="96" rx="12" fill="#ffffff"/>
+  <g transform="translate(8,12)">
+    <circle cx="32" cy="32" r="28" fill="#6366f1"/>
+    <g transform="translate(18,20)" fill="#fff">
+      <path d="M0 0h12v2H0z"/>
+      <path d="M0 4h12v2H0z"/>
+    </g>
+  </g>
+  <text x="76" y="56" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#0f172a">SMER</text>
+  <text x="76" y="76" font-family="Inter, sans-serif" font-size="10" fill="#475569">Society for Modern English Research</text>
+</svg>
