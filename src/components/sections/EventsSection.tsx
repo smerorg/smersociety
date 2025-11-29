@@ -10,7 +10,7 @@ const EventsSection = () => {
             Information will be available soon...
           </p>
           <div className="flex items-center justify-center text-sm text-muted-foreground">
-            <Calendar className="w-4 h-4 mr-2 text-primary" />
+                    <Calendar className="w-4 h-4 mr-2 text-primary" />
             Stay tuned for upcoming announcements.
           </div>
         </div>

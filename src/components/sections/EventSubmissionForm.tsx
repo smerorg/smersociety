@@ -172,10 +172,10 @@ const EventSubmissionForm = () => {
       <div className="card-academic p-8">
         <div className="mb-8 text-center">
           <h3 className="text-heading-2 mb-3">SMER Member Event Submission Form</h3>
-          <p className="text-muted-foreground text-sm max-w-3xl mx-auto">
+          {/* <p className="text-muted-foreground text-sm max-w-3xl mx-auto">
             Share your upcoming or recently hosted SMER-aligned events. Provide accurate details and three clear photographs.
             Once approved, your submission will be showcased in the Event Gallery.
-          </p>
+          </p> */}  
         </div>
 
         <form className="space-y-8" onSubmit={handleSubmit}>
@@ -357,11 +357,11 @@ const EventSubmissionForm = () => {
           </div>
 
           <div className="pt-4 border-t border-border">
-            <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={isSubmitting}>
+            <Button type="submit" size="lg" className="w-full sm:w-auto bg-primary text-white hover:bg-primary-hover" disabled={isSubmitting}>
               {isSubmitting ? 'Submitting...' : 'Submit Event for Review'}
             </Button>
             <p className="text-xs text-muted-foreground mt-2">
-              An acknowledgment email will be sent to SMER admin. Approved events will appear in the Event Gallery.
+              An acknowledgment email will be sent to SMER admin.
             </p>
           </div>
         </form>

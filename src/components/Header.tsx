@@ -68,7 +68,7 @@ const Header = ({ activeSection, onSectionChange }: HeaderProps) => {
       <div className="container-academic">
         {/* Row 1: Full Form (Centered & Bold) */}
         <div className="flex items-center justify-center py-2 border-b border-slate-100">
-          <h1 className="text-4xl font-bold text-slate-900 text-center">Society for Modern English Research</h1>
+          <h1 className="smer-title text-4xl font-bold text-slate-900 text-center">Society for Modern English Research</h1>
         </div>
 
         {/* Row 2: Logo & Navigation Menu */}

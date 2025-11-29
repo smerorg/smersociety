@@ -6,8 +6,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Upload, FileText, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { countryDialCodes } from '@/data/countryDialCodes';
 
 const MembershipSection = () => {
   const { toast } = useToast();
@@ -170,13 +172,22 @@ const MembershipSection = () => {
 
                     <div>
                       <Label htmlFor="country">Country *</Label>
-                      <Input
-                        id="country"
+                      <Select
                         value={formData.country}
-                        onChange={(e) => handleInputChange('country', e.target.value)}
-                        placeholder="Your country"
+                        onValueChange={(value) => handleInputChange('country', value)}
                         required
-                      />
+                      >
+                        <SelectTrigger id="country" className="w-full bg-white border border-input">
+                          <SelectValue placeholder="Select your country" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white">
+                          {countryDialCodes.map((country) => (
+                            <SelectItem key={country.code} value={country.name} className="bg-white hover:bg-slate-100">
+                              {country.name}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
 
@@ -251,10 +262,10 @@ const MembershipSection = () => {
                     <Button type="submit" className="w-full" size="lg">
                       Submit Application
                     </Button>
-                    <p className="text-xs text-muted-foreground text-center mt-2">
+                    {/* <p className="text-xs text-muted-foreground text-center mt-2">
                       This will open your email client with the application details. 
                       Please send the email to complete your application.
-                    </p>
+                    </p> */}
                   </div>
                 </form>
               </CardContent>

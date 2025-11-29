@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,7 +12,7 @@
   :root {
     /* Core Brand Colors - Academic Blue & Professional Grays */
     --background: 0 0% 100%;
-    --foreground: 217 33% 17%;
+    --foreground: 0 0% 0%;
     
     /* Academic Primary - Deep Navy Blue */
     --primary: 217 91% 25%;
@@ -25,13 +26,13 @@
     
     /* Content Colors */
     --card: 0 0% 100%;
-    --card-foreground: 217 33% 17%;
+    --card-foreground: 0 0% 0%;
     
     --muted: 217 10% 96%;
-    --muted-foreground: 217 10% 45%;
+    --muted-foreground: 0 0% 0%;
     
     --accent: 217 10% 95%;
-    --accent-foreground: 217 33% 17%;
+    --accent-foreground: 0 0% 0%;
     
     /* Interactive States */
     --border: 217 20% 88%;
@@ -85,6 +86,36 @@ html, html *, body, body * {
   font-variant: normal !important;
   font-feature-settings: normal !important;
   letter-spacing: normal !important;
+  color: #000000 !important;
+}
+
+/* Override specific text colors to dark black */
+p, span, div, a, input, textarea, label, select, li, td, th, em, i, u, small, sub, sup, h1, h2, h3, h4, h5, h6 {
+  color: #000000 !important;
+}
+
+/* Buttons - keep their original colors for contrast but ensure text is readable */
+button:not([class*="text-white"]):not([class*="text-primary-foreground"]):not([class*="text-secondary-foreground"]) {
+  color: #000000 !important;
+}
+
+/* Ensure buttons with text-white class have white text */
+button.text-white, .text-white button, button[class*="text-white"] {
+  color: #ffffff !important;
+}
+
+/* Keep muted text slightly lighter but still dark */
+.text-muted-foreground {
+  color: #1a1a1a !important;
+}
+
+/* Links */
+a {
+  color: #000000 !important;
+}
+
+a:hover {
+  color: #1a1a1a !important;
 }
 
 /* Ensure Cinzel font doesn't force uppercase */
@@ -104,10 +135,15 @@ body {
   
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Cinzel', 'Libre Bodoni', serif;
+    font-family: 'IBM Plex Serif', 'Libre Bodoni', serif;
     text-transform: none !important;
     font-variant: normal !important;
     font-feature-settings: normal !important;
+  }
+  
+  /* Keep Cinzel font only for "Society for Modern English Research" text */
+  .smer-title, h1.smer-title {
+    font-family: 'Cinzel', serif !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -118,7 +154,8 @@ body {
   }
 
   strong, b {
-    @apply font-semibold text-slate-900;
+    @apply font-semibold;
+    color: #000000 !important;
     text-transform: none !important;
   }
   

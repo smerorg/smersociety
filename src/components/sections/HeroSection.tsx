@@ -5,14 +5,14 @@ const HeroSection = () => {
     <>
       {/* Overview of SMER Section */}
       <section className="relative py-16 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroBackground})` }}>
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-white/90"></div>
+        {/* Blue overlay for readability */}
+        <div className="absolute inset-0 bg-blue-200/75"></div>
         
         <div className="container-academic relative z-10">
           <div className="max-w-4xl mx-auto">
             {/* Section Header */}
             <div className="mb-12 text-center">
-              <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              <h2 className="text-4xl font-bold text-black mb-4">
                 Overview of SMER
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-indigo-600 to-blue-600 mx-auto"></div>
@@ -20,7 +20,7 @@ const HeroSection = () => {
 
             {/* Content */}
             <div className="space-y-6">
-              <div className="space-y-6 text-slate-700 leading-relaxed text-base">
+              <div className="space-y-6 text-black font-bold leading-relaxed text-base">
                 <p className="text-justify">
                   The Society for Modern English Research (SMER) is a distinguished non-profit academic society that unites researchers, educators, and professionals in modern English studies, encompassing language, linguistics, and literature from around the world. Scholars from diverse countries and academic traditions are active members of SMER, and researchers worldwide are warmly invited to join this dynamic and inclusive scholarly community.
                 </p>
@@ -38,7 +38,7 @@ const HeroSection = () => {
                 </p>
 
                 <p className="text-justify">
-                  SMER upholds the values of academic integrity, collaboration, and accessibility. While operating as a non-profit organization, profit is not its goal; however, it is essential to cover relevant expenses to sustain its academic and organizational activities. Therefore, the society may strives to maintain reasonable membership and publication costs to support its operations and ensure open participation. At the same time, recognizing global disparities in research resources, SMER provides full or partial fee exemptions for researchers and research communities from underdeveloped countries who are unable to bear the associated costs of membership or publication. This policy reflects the society's commitment to inclusivity, equity, and the promotion of scholarly exchange without financial barriers.
+                  SMER upholds the values of academic integrity, collaboration, and accessibility. While operating as a non-profit organization, profit is not its goal; however, it is essential to cover relevant expenses to sustain its academic and organizational activities. Therefore, the society may strive to maintain reasonable membership and publication costs to support its operations and ensure open participation. At the same time, recognizing global disparities in research resources, SMER provides full or partial fee exemptions for researchers and research communities from underdeveloped countries who are unable to bear the associated costs of membership or publication. This policy reflects the society's commitment to inclusivity, equity, and the promotion of scholarly exchange without financial barriers.
                 </p>
               </div>
             </div>

@@ -22,6 +22,7 @@ const GallerySection = () => {
   const [events, setEvents] = useState<EventGalleryItem[]>([]);
   const [loadingEvents, setLoadingEvents] = useState(true);
   const [eventError, setEventError] = useState<string | null>(null);
+  const [showSubmissionForm, setShowSubmissionForm] = useState(false);
   
   const categories = [
     { id: 'all', label: 'All Events' },
@@ -122,7 +123,7 @@ const GallerySection = () => {
               const formattedDate = item.event_date ? new Date(item.event_date).toLocaleDateString() : 'TBD';
 
               return (
-                <div key={item.id} className="card-academic overflow-hidden group hover:shadow-medium transition-all duration-300">
+              <div key={item.id} className="card-academic overflow-hidden group hover:shadow-medium transition-all duration-300">
                   <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                     <img
                       src={imageUrl}
@@ -132,14 +133,14 @@ const GallerySection = () => {
                         (e.currentTarget as HTMLImageElement).src = 'https://placehold.co/600x400?text=SMER';
                       }}
                     />
-                    <div className="absolute top-4 left-4">
+                  <div className="absolute top-4 left-4">
                       <span className="bg-secondary text-secondary-foreground px-2 py-1 rounded-full text-xs font-medium capitalize">
                         {item.event_type}
-                      </span>
-                    </div>
+                    </span>
                   </div>
+                </div>
 
-                  <div className="p-6">
+                <div className="p-6">
                     <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
                       {item.event_title}
                     </h3>
@@ -152,9 +153,9 @@ const GallerySection = () => {
                         {formattedDate}
                       </div>
                       <div className="flex items-center">
-                        <MapPin className="w-4 h-4 mr-2 text-primary" />
+                      <MapPin className="w-4 h-4 mr-2 text-primary" />
                         {item.event_location}
-                      </div>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -194,13 +195,18 @@ const GallerySection = () => {
               We welcome contributions from our SMER members to showcase the breadth of our activities and connections.
               Submit your event using the form below, and once approved, it will appear in this gallery.
             </p>
-            <Button variant="membership" size="lg" onClick={() => document.getElementById('member-event-form')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button variant="membership" size="lg" onClick={() => {
+              setShowSubmissionForm(true);
+              setTimeout(() => {
+                document.getElementById('member-event-form')?.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }}>
               Go to Submission Form
             </Button>
           </div>
         </div>
 
-        <EventSubmissionForm />
+        {showSubmissionForm && <EventSubmissionForm />}
       </div>
     </section>
   );
